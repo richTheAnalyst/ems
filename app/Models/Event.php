@@ -14,8 +14,7 @@ class Event extends Model
         'venue_id',
         'title',
         'description',
-        'start_date',
-        'end_date',
+        'category',
         'capacity',
         'status',
         'price',
@@ -39,7 +38,11 @@ class Event extends Model
 
     public function schedules()
     {
-        return $this->hasMany(Event_Schedule::class);
+        return $this->hasMany(EventSchedule::class);
+    }
+    public function organizer()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function tickets()

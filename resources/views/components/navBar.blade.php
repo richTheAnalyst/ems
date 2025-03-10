@@ -42,7 +42,7 @@
                     <a href="{{ route('event')}}" class="px-6 py-4 bg-[#f093e6] rounded-[40px] text-[#0e0e0e] text-2xl font-semibold font-poppins text-center lg:text-left hover:bg-[#e784d7] transition-colors">
                         Events
                     </a>
-                    <a href="{{ route('blog')}}" class="px-6 py-4 bg-[#f093e6] rounded-[40px] text-[#0e0e0e] text-2xl font-semibold font-poppins text-center lg:text-left hover:bg-[#e784d7] transition-colors">
+                    <a href="{{ route('blog.index')}}" class="px-6 py-4 bg-[#f093e6] rounded-[40px] text-[#0e0e0e] text-2xl font-semibold font-poppins text-center lg:text-left hover:bg-[#e784d7] transition-colors">
                         Blog
                     </a>
                     <a href="{{ route('contact')}}" class="px-6 py-4 bg-[#f093e6] rounded-[40px] text-[#0e0e0e] text-2xl font-semibold font-poppins text-center lg:text-left hover:bg-[#e784d7] transition-colors">
@@ -50,9 +50,12 @@
                     </a>
 
                 </nav>
+                <a href="{{ route('contact') }}">
                 <button class="w-full lg:w-auto bg-gradient-to-r from-[#20c9e7] to-[#f126dc] px-8 py-4 rounded-[30px] text-black text-2xl font-semibold font-poppins hover:opacity-60 transition-opacity">
-                   Sign In
+                   Consultation
                 </button>
+                </a>
+                
             </div>
         </div>
     </div>

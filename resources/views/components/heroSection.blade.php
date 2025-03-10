@@ -11,9 +11,9 @@
                 <p class="mt-4">1st February 2025</p>
             </div>
 
-            <button class="bg-[#0e0e0e] text-white px-14 py-6 rounded-[50px] text-3xl font-medium border-2 border-black hover:bg-gray-900 transition-colors">
-                Get Ticket
-            </button>
+            <a href="{{ route('event') }} " class="bg-gradient-to-r from-cyan-500 to-pink-400 text-white px-14 py-6 rounded-[50px] text-3xl font-medium border-2 border-white hover:opacity-75">
+                BOOK AN EVENT
+            </a>
         </div>
     </div>
 </header>

@@ -21,8 +21,8 @@
                         <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg transform transition-transform duration-300 group-hover:scale-105">
                             <img 
                                 class="w-full h-full object-cover" 
-                                src="{{ asset('images/team/mem2.jpg')}}" 
-                                alt="Sandra Q"
+                                src="{{ asset('images/team/mem6.jpg')}}" 
+                                alt="Brian Q"
                             />
                         </div>
                         <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#f093e6] rounded-full flex items-center justify-center opacity-0 transform scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-black text-xl md:text-2xl font-bold font-['Inter']">Sandra Q.</h3>
+                        <h3 class="text-black text-xl md:text-2xl font-bold font-['Inter']">Brian Q.</h3>
                         <p class="text-gray-600 text-sm">Event Organizer</p>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                             <img 
                                 class="w-full h-full object-cover" 
                                 src="{{ asset('images/team/mem1.jpg')}}" 
-                                alt="Joel Stone"
+                                alt="Mr BLAQ"
                             />
                         </div>
                         <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#f093e6] rounded-full flex items-center justify-center opacity-0 transform scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100">
@@ -86,8 +86,8 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-black text-xl md:text-2xl font-bold font-['Inter']">Joel Stone</h3>
-                        <p class="text-gray-600 text-sm">Wedding Client</p>
+                        <h3 class="text-black text-xl md:text-2xl font-bold font-['Inter']">Mr BLAQ</h3>
+                        <p class="text-gray-600 text-sm">Wedding Client & TM at PLANPRO</p>
                     </div>
                 </div>
                 <p class="text-black text-base font-medium font-['Inter'] leading-relaxed">

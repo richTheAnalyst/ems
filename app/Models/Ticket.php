@@ -15,7 +15,8 @@ class Ticket extends Model
         'price',
         'quantity',
         'valid_until',
-        'status',
+        'status'
+        ,
     ];
 
     protected $casts = [

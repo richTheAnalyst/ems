@@ -27,183 +27,26 @@
 @include('events.eventNav')
 
 <section>
-    <!-- Sections -->
-    <div id="wedding" class="event-section">
-    <div class="relative flex flex-wrap gap-4 justify-center">
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/about-1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/about-1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/about-1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/about-1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/about-1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/about-1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-    </div>
-</div>
+    @foreach (['wedding', 'funeral', 'seminar', 'birthday'] as $category)
+        <div id="{{ $category }}" class="event-section {{ $loop->first ? '' : 'hidden' }}">
+            <div class="relative flex flex-wrap gap-4 justify-center">
+                @foreach ($events->where('category', $category) as $event)
+                    <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg group p-10">
+                        <!-- Image with hover effect -->
+                             <img src="{{ Storage::url($event->banner_image) }}" alt="{{ $event->title }}" 
+                             class="w-full h-auto object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300 ease-in-out">
 
 
-    <div id="funeral" class="event-section hidden">
-    <div class="relative flex flex-wrap gap-4 justify-center">
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/Funeral.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
+                        <!-- Hover effect on the BOOK button -->
+                        <a href="{{ route('book.event', $event->id) }}" 
+                           class="bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 group-hover:from-cyan-500 group-hover:to-pink-500 group-hover:scale-105 transition-all duration-300 ease-in-out">
+                            BOOK
+                        </a>
+                    </div>
+                @endforeach
+            </div>
         </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/Funeral.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/Funeral.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/Funeral.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/Funeral.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/Funeral.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-    </div>
-    </div>
-
-    <div id="seminar" class="event-section hidden">
-    <div class="relative flex flex-wrap gap-4 justify-center">
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/seminar1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/seminar.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/seminar1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/seminar.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/seminar1.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/seminar.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-    </div>
-    </div>
-
-    <div id="birthday" class="event-section hidden">
-    <div class="relative flex flex-wrap gap-4 justify-center ">
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg p-4 ">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/birthday.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg p-4">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/birthday.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg p-4">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/birthday.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg p-4">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/birthday.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg p-4">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/birthday.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg p-4">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/birthday.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg p-4">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/birthday.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-        <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg p-4">
-            <img class="w-full h-auto object-cover rounded-lg mb-4" src="{{ asset('images/event/birthday.jpg') }}" alt="">
-            <a href="" class=" bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 hover:bg-gradient-to-l from-cyan-200 to-pink-400">
-                BOOK
-            </a>
-        </div>
-    </div>
-    </div>
+    @endforeach
 </section>
 
     @include('components.sponsor');

@@ -12,7 +12,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view("blog");
+        $blogs = Blog::latest("id")->paginate(10);
+        return view("blog", compact("blogs"));
     }
 
     /**
@@ -37,6 +38,7 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         //
+        return view("blogShow", ['blog'=>$blog]);
     }
 
     /**

@@ -23,43 +23,80 @@
             </div>
         </div>
     </header>
-    <section>
-        <h1 class="flex justify-center text-3xl text-pink-600 font-bold p-4 ">BLOGS</h1>
-        <div class="container mx-auto p-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <!-- Event Card -->
-                <div class="relative bg-white shadow-lg rounded-2xl p-2 flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                    <img class="w-60 h-52 rounded-xl" src="{{ asset('images/about-1.jpg')}}" alt="Event Image" />
-                    <div class="mt-4 text-lg font-medium text-gray-800">10 FEBRUARY, 2025</div>
-                    <div class="mt-2 text-xl font-bold text-center">How to Plan a Perfect Wedding on Budget</div>
-                    <button class="mt-4 px-6 py-2 bg-pink-500 text-white rounded-xl shadow-md transition-colors duration-300 hover:bg-pink-600">Read More</button>
+    {{-- <section>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @foreach($blogs as $blog)
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                @if($blog->image)
+                    <img 
+                        src="{{ asset('storage/blogs/' . $blog->image) }}"
+    alt="{{ $blog->title }}"
+    class="w-full h-48 object-cover"
+    >
+    @endif
+
+    <div class="p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">{{ $blog->title }}</h2>
+
+        <div class="text-gray-600 mb-4 line-clamp-3">
+            {!! Str::limit(strip_tags($blog->content), 150) !!}
+        </div>
+
+        <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+                By {{ $blog->user->name }}
+            </span>
+            <a
+                href="{{ route('blog.show', $blog) }}"
+                class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors duration-300">
+                Read More
+            </a>
+        </div>
+    </div>
+    </div>
+    @endforeach
+    </div>
+
+    <div class="mt-8">
+        {{ $blogs->links() }}
+    </div>
+    </section>
+    --}}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6">
+        @foreach($blogs as $blog)
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+            @if($blog->image)
+            <img
+                src="{{ Storage::url(  $blog->image) }}"
+                alt="{{ $blog->title }}"
+                class="w-full h-48 object-cover">
+            @endif
+
+            <div class="p-6">
+                <h2 class="text-xl font-bold text-gray-900 mb-2">{{ $blog->title }}</h2>
+
+                <div class="text-gray-600 mb-4 line-clamp-3">
+                    {!! Str::limit(strip_tags($blog->content), 150) !!}
                 </div>
 
-                <div class="relative bg-white shadow-lg rounded-2xl p-2 flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                    <img class="w-60 h-52 rounded-xl" src="{{ asset('images/about-2.jpg')}}" alt="Event Image" />
-                    <div class="mt-4 text-lg font-medium text-gray-800">10 FEBRUARY, 2025</div>
-                    <div class="mt-2 text-xl font-bold text-center">Step-by-Step to Organize a Successful Seminar</div>
-                    <button class="mt-4 px-6 py-2 bg-pink-500 text-white rounded-xl shadow-md transition-colors duration-300 hover:bg-pink-600">Read More</button>
-                </div>
-
-                <div class="relative bg-white shadow-lg rounded-2xl p-2 flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                    <img class="w-60 h-52 rounded-xl" src="{{ asset('images/about-3.jpg')}}" alt="Event Image" />
-                    <div class="mt-4 text-lg font-medium text-gray-800">10 FEBRUARY, 2025</div>
-                    <div class="mt-2 text-xl font-bold text-center">Checklist for Hosting a Flawless Party</div>
-                    <button class="mt-4 px-6 py-2 bg-pink-500 text-white rounded-xl shadow-md transition-colors duration-300 hover:bg-pink-600">Read More</button>
-                </div>
-
-                <div class="relative bg-white shadow-lg rounded-2xl p-2 flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                    <img class="w-60 h-52 rounded-xl" src="{{ asset('images/about-1.jpg')}}" alt="Event Image" />
-                    <div class="mt-4 text-lg font-medium text-gray-800">10 FEBRUARY, 2025</div>
-                    <div class="mt-2 text-xl font-bold text-center">Common Mistakes to Avoid When Planning an Event</div>
-                    <button class="mt-4 px-6 py-2 bg-pink-500 text-white rounded-xl shadow-md transition-colors duration-300 hover:bg-pink-600">Read More</button>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">
+                        By {{ $blog->user->name }}
+                    </span>
+                    <a
+                        href="{{ route('blog.show', $blog) }}"
+                        class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors duration-300">
+                        Read More
+                    </a>
                 </div>
             </div>
         </div>
+        @endforeach
+    </div>
 
-    </section>
-
+    <div class="mt-8 px-6">
+        {{ $blogs->links() }}
+    </div>
 
     @include('components.sponsor');
     @include('components.testimonial');

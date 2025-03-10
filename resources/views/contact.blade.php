@@ -88,7 +88,7 @@
                         For more enquires, fill out the form fields to book or register.
                     </h3>
 
-                    <form action="" method="POST" class="space-y-6">
+                    <form action="{{ route('contact.store') }}" method="POST" class="space-y-6">
                         @csrf
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <!-- Name -->
@@ -133,7 +133,7 @@
                                 class="group relative bg-gradient-to-r from-[#20c9e7] to-[#f126dc] text-black font-semibold px-8 py-4 rounded-[30px] 
                             hover:bg-gradient-to-l from bg-pink-400 to bg-cyan-400 transition-all duration-300">
                                 <span class="flex items-center">
-                                    Register
+                                    Contact Us
                                     <svg class="ml-2 w-6 h-6 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.000976562 20.658L18.1553 4.02731H6.85814V0.886475H24.0011V16.5906H20.5725V6.2416L2.41813 22.8723L0.000976562 20.658Z" fill="white" />
                                     </svg>

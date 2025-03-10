@@ -2,34 +2,34 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    use Notifiable;
 
     protected $fillable = [
         'name',
         'email',
         'password',
         'role',
-        'status',
+        'profile_image',
     ];
 
     protected $hidden = [
         'password',
     ];
+
+    public function getProfileImageUrlAttribute()
+    {
+        return asset('images/adminLogo/' . $this->profile_image);
+    }
 
     public function events()
     {
@@ -51,7 +51,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    
+
     /**
      * Get the attributes that should be cast.
      *
@@ -63,5 +63,15 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+    public function canAccessFilament(): bool
+    {
+        return true;
+    }
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
     }
 }

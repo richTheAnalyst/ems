@@ -40,9 +40,9 @@
                     <span class="text-black font-bold text-center sm:text-left">Free Entry Tickets</span>
                 </div>
                 
-                <button class="w-full sm:w-auto bg-[#bd8555] text-black px-6 md:px-8 py-4 md:py-6 rounded-[30px] text-xl md:text-3xl font-bold hover:bg-[#a67447] transition-colors">
-                    View our Schedule
-                </button>
+                <a href="{{ route('event') }}" class="w-full sm:w-auto bg-[#bd8555] text-black px-6 md:px-8 py-4 md:py-6 rounded-[30px] text-xl md:text-3xl font-bold hover:bg-[#a67447] transition-colors">
+                    View our schedule
+                </a>
             </div>
         </div>
     </div>
