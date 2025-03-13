@@ -59,7 +59,7 @@
                 <div class="w-24 h-24 md:w-32 md:h-32 relative overflow-hidden rounded-lg transform transition-all duration-300 hover:scale-110 hover:shadow-xl">
                     <img 
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:brightness-110" 
-                        src="{{ asset('images/sponsor/playstation.png')}}" 
+                        src="{{ asset('images/sponsor/Playstation.png')}}" 
                         alt="Playstation"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#f093e6]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">

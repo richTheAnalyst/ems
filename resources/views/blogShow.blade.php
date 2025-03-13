@@ -2,7 +2,8 @@
     <article class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden m-6">
         @if($blog->image)
         <img
-            src="{{ Storage::url( $blog->image) }}"
+        src="{{ asset('storage/' . $blog->image) }}"
+
             alt="{{ $blog->title }}"
             class="w-full h-48 object-cover">
         @endif
