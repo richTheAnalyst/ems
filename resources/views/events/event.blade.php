@@ -33,10 +33,8 @@
                 @foreach ($events->where('category', $category) as $event)
                     <div class="w-52 lg:w-64 overflow-hidden rounded-lg shadow-lg group p-10">
                         <!-- Image with hover effect -->
-                             <img src="{{ Storage::url($event->banner_image) }}" alt="{{ $event->title }}" 
-                             class="w-full h-auto object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300 ease-in-out">
-
-
+                        <img src="{{ asset('storage/' . $event->banner_image) }}" alt="{{ $event->title }}" 
+                        class="w-full h-auto object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300 ease-in-out">
                         <!-- Hover effect on the BOOK button -->
                         <a href="{{ route('book.event', $event->id) }}" 
                            class="bg-gradient-to-r from-cyan-400 to-pink-400 rounded-md font-semibold p-2 group-hover:from-cyan-500 group-hover:to-pink-500 group-hover:scale-105 transition-all duration-300 ease-in-out">

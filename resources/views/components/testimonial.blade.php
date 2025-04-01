@@ -21,7 +21,7 @@
                         <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg transform transition-transform duration-300 group-hover:scale-105">
                             <img 
                                 class="w-full h-full object-cover" 
-                                src="{{ asset('images/team/mem6.jpg')}}" 
+                                src="{{ asset('images/team/mem6.jpeg')}}" 
                                 alt="Brian Q"
                             />
                         </div>

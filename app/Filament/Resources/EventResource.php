@@ -85,9 +85,9 @@ class EventResource extends Resource
                     ->required()
                     ->numeric()
                     ->prefix('$'),
-
-                FileUpload::make('banner_image')
+                    FileUpload::make('banner_image')
                     ->image()
+                    ->disk('public')  // Add this line
                     ->directory('event_banners')
                     ->required()
                     ->imageEditor()
