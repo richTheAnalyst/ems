@@ -10,13 +10,23 @@
                 ['Classic Package', '$876', '#f299e9'],
                 ['Deluxe Package', '$4231', '#c0a0e9']
             ] as [$package, $price, $bgColor])
-                <div class="rounded-[30px] p-6 transform hover:-translate-y-1 transition-transform" style="background-color: {{ $bgColor }}">
-                    <h3 class="text-2xl font-bold text-black mb-4">{{ $package }}</h3>
-                    <p class="text-4xl font-bold text-black mb-8">{{ $price }}</p>
-                    <button class="w-full bg-[#d9d9d9] text-black text-2xl font-medium py-3 rounded-[20px] hover:bg-gray-600 transition-colors">
-                        Get Ticket
-                    </button>
-                </div>
+            <div class="rounded-[30px] p-6 transform hover:-translate-y-1 transition-transform text-center"
+     style="background-color: {{ $bgColor }}">
+    
+    <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black mb-4">
+        {{ $package }}
+    </h3>
+    
+    <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black mb-8">
+        {{ $price }}
+    </p>
+    
+    <button class="w-full bg-[#d9d9d9] text-black text-lg sm:text-xl md:text-2xl font-medium py-3 rounded-[20px] hover:bg-gray-800 hover:text-white transition-colors">
+        Get Ticket
+    </button>
+
+</div>
+
             @endforeach
         </div>
     </div>
